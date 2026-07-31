@@ -5,6 +5,12 @@ import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import CourseCard from "./components/CourseCard";
 import {useEffect,useState} from "react";
+import { Routes, Route } from "react-router-dom";
+
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,11 +30,30 @@ function App() {
   }
 
   return (
+    
     <>
+    <Navbar/>
+      <Routes>
+        <Route
+        path="/"
+        element={<Home/>}
+        />
+
+        <Route
+        path="/about"
+        element={<About/>}
+        />
+
+        <Route
+        path="/contact"
+        element={<Contact/>}
+        />
+
+      </Routes>
       <h1>Get started</h1>
       <p>This is my first React application</p>
       <Greeting />
-      <Navbar />
+      
       <Hero />
 
       <CourseCard
