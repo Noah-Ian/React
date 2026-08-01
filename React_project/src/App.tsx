@@ -50,7 +50,7 @@ function App() {
         />
 
       </Routes>
-      <h1>Get started</h1>
+      <h1 className="text-4xl font-bold text-blue-600">Get started</h1>
       <p>This is my first React application</p>
       <Greeting />
       
