@@ -72,6 +72,17 @@ function App() {
 
       <form onSubmit={handleSubmit}>
         <input
+        className="
+        w-full
+        border
+        border-gray-300
+        rounded-lg
+        p-3
+        outline-none
+        focus:ring-2
+        focus:ring-blue-500
+        focus:border-blue-500
+        "
         value={name}
         placeholder="Name"
         onChange={(event)=> setName(event.target.value)}
