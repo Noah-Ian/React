@@ -4,9 +4,8 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import CourseCard from "./components/CourseCard";
-import {useEffect,useState} from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -17,43 +16,29 @@ function App() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
-  useEffect(()=>{
-  alert("tested");
+  useEffect(() => {
+    alert("tested");
   }, [count]);
 
-
-  function handleSubmit(
-    event: React.FormEvent
-  ){
+  function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
     console.log(name);
   }
 
   return (
-    
     <>
-    <Navbar/>
+      <Navbar />
       <Routes>
-        <Route
-        path="/"
-        element={<Home/>}
-        />
+        <Route path="/" element={<Home />} />
 
-        <Route
-        path="/about"
-        element={<About/>}
-        />
+        <Route path="/about" element={<About />} />
 
-        <Route
-        path="/contact"
-        element={<Contact/>}
-        />
-
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <h1 className="text-4xl font-bold text-blue-600">Get started</h1>
       <p>This is my first React application</p>
       <Greeting />
-      
+
       <Hero />
 
       <CourseCard
@@ -72,7 +57,7 @@ function App() {
 
       <form onSubmit={handleSubmit}>
         <input
-        className="
+          className="
         w-full
         border
         border-gray-300
@@ -83,22 +68,19 @@ function App() {
         focus:ring-blue-500
         focus:border-blue-500
         "
-        value={name}
-        placeholder="Name"
-        onChange={(event)=> setName(event.target.value)}
+          value={name}
+          placeholder="Name"
+          onChange={(event) => setName(event.target.value)}
         />
-        <br/>
+        <br />
 
         <input
-        value={password}
-        placeholder="password"
-        onChange={(event)=> setPassword(event.target.value)}
+          value={password}
+          placeholder="password"
+          onChange={(event) => setPassword(event.target.value)}
         />
 
-        <button type="submit">
-          Login
-        </button>
-
+        <button type="submit">Login</button>
       </form>
       <h1>{count}</h1>
 
